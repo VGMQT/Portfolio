@@ -1,0 +1,24 @@
+//vars
+$white: #f6f6f6;
+$grey: #727272;
+$greytext: #5a5a5a;
+$black: #414141;
+$red: #e85f61;
+$blue: #33c1e3;
+
+//layout
+@import "_misc/fonts.scss";
+@import "_misc/mixins.scss";
+@import "_misc/normalize.scss";
+@import "_misc/adjustment.scss";
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/fa-solid.scss";
+@import "fontawesome/fa-brands.scss";
+
+//styles
+@import "sections/header.scss";
+@import "sections/footer.scss";
+@import "sections/content.scss";
+@import "sections/hello.scss";
+@import "sections/career.scss";
+@import "sections/portfolio.scss";

@@ -1,0 +1,73 @@
+.footer{
+	background: $black;
+	.container{
+	@extend %clearfix;
+	} 
+}
+
+.footer__left{
+	width: 50%;
+	float: left;
+	text-align: left;
+	@include mobile{
+		width: 100%;
+		float: none;
+		text-align: center;
+	}
+}
+
+.copyright{
+	display: inline-block;
+	text-align: left;
+	padding: 15px 15px 15px 0;
+	font-size: 14px;
+	color: $grey;
+	@include mobile{
+		text-align: center;
+		padding: 15px;
+	}
+}
+
+.footer__right{
+	width: 50%;
+	float: left;
+	text-align: right;
+	font-size: 0;
+	@include mobile{
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+}
+
+.socials{
+	display: inline-block;
+	@extend %clearfix;
+}
+
+.socials__item{
+	display: inline-block;
+	padding: 10px 0 10px 8px;
+	font-size: 14px;
+	@include mobile{
+		padding: 10px 4px;
+	}
+}
+
+.socials__link{
+	width: 30px;
+	height: 30px;
+	display: block;
+}
+
+@each $social in (tw, vk, tg){
+	.socials__link_#{$social}{
+		background: url('../assets/images/icons/#{$social}.png') 0 0 no-repeat;
+		background-size: 30px 30px;
+		@include transition(all .5s);	
+		&:hover{
+			background: url('../assets/images/icons/#{$social}1.png') 0 0 no-repeat;
+			background-size: 30px 30px;
+		}
+	}
+}

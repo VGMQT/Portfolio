@@ -1,0 +1,195 @@
+.main-content{
+	padding: 0;
+}
+
+.content{
+	.container{
+	@extend %clearfix;
+	}
+}
+
+.sidebar{
+	float: left;
+	@include laptop{
+		float: none;
+	}
+}
+
+.nav__list{
+	width: rem(215px);
+	@include laptop{
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+}
+
+.nav__item{
+	@include laptop{
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+.nav__item_active{
+	.nav__link{
+		color: $blue;
+		border-right: rem(5px) solid $blue;
+		@include laptop{
+			border: none;
+		}
+	}
+}
+
+.nav__link{
+	@include fira(bold);
+	font-size: rem(18px);
+	color: $black;
+	display: block;
+	padding: rem(10px) rem(20px) rem(10px) 0;
+	text-align: right;
+	border-right: 5px solid transparent;
+	&:link{
+		text-decoration: none;
+	}
+	&:hover{
+		@include fira();
+		color: $blue;
+	}
+	&:active{
+		@include fira(bold);
+		color: $blue;
+		border-color: $blue;
+	}
+	@include laptop{
+		border: none;
+		padding: rem(10px);
+	}
+}
+
+.page-content{
+	width: rem(725px);
+	float: right;
+	@include laptop{
+		width: 100%;
+		float: none;
+	}
+}
+
+.about{
+	margin-left: rem(20px);
+	@extend %clearfix;
+	@include laptop{
+		margin-left: 0;
+	}
+}
+
+.about__left{
+	width: rem(315px);
+	text-align: center;
+	float: left;
+	@include laptop{
+		width: rem(200px);
+	}
+	@include mobile{
+		float: none;
+		width: auto;
+	}
+}
+
+.about__pic{
+	overflow: hidden;
+	display: inline-block;
+	width: rem(220px);
+	height: rem(220px);
+	border-radius: 50%;
+	border: rem(3px) solid #fff;
+	@include laptop{
+		max-width: rem(195px);
+		max-height: rem(195px);
+	}
+	@include tablet{
+		max-width: rem(170px);
+		max-height: rem(170px);
+	}
+	@include mobile{
+		min-width: rem(140px);
+		min-height: rem(140px);
+	}
+}
+
+.about__pic-avatar{
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.about__right{
+	width: rem(385px);
+	float: right;
+	margin-bottom: rem(50px);
+	@include laptop{
+		width: rem(480px);
+	}
+	@include tablet{
+		width: rem(320px);
+	}
+	@include mobile{
+		width: auto;
+		margin-bottom: 0px;
+	}
+}
+
+.title{
+	@include fira(bold);
+	font-size: 35px;
+	color: $black;
+	margin-bottom: rem(20px);
+	@include mobile{
+		text-align: center;
+	}
+}
+
+.about__desc{
+	@include fira();
+	margin-bottom: rem(50px);
+	p{
+		font-size: rem(18px);
+		margin-top: 0;
+		margin-bottom: rem(15px);
+		color: $greytext;
+	}
+	@include laptop{
+		overflow: auto;
+		max-height: rem(370px);
+	}
+	@include tablet{
+		max-height: rem(430px);
+	}
+	@include mobile{
+		overflow: hidden;
+		max-height: none;
+	}
+}
+
+.about__btn{
+	text-align: right;
+	@include mobile{
+		text-align: center;
+		margin-bottom: 20px;
+	}
+}
+
+.btn{
+	@include fira(bold);
+	display: inline-block;
+	padding: rem(8px) rem(15px);
+	border: rem(2px) solid $red;
+	border-radius: rem(25px);
+	text-decoration: none;
+	color: $red;
+	&:hover{
+		background-color: $red;
+		color: $white;
+	}
+}
