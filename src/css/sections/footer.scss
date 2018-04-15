@@ -1,73 +1,81 @@
-.footer{
-	background: $black;
-	.container{
-	@extend %clearfix;
-	} 
+.footer {
+  background: $black;
+  .container {
+    @extend %clearfix;
+  }
 }
 
-.footer__left{
-	width: 50%;
-	float: left;
-	text-align: left;
-	@include mobile{
-		width: 100%;
-		float: none;
-		text-align: center;
-	}
+.footer__left {
+  float: left;
+  width: 50%;
+  text-align: left;
+  @include mobile {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
 }
 
-.copyright{
-	display: inline-block;
-	text-align: left;
-	padding: 15px 15px 15px 0;
-	font-size: 14px;
-	color: $grey;
-	@include mobile{
-		text-align: center;
-		padding: 15px;
-	}
+.copyright {
+  display: inline-block;
+  padding: 15px;
+  text-align: left;
+  font-size: 14px;
+  color: $grey;
+  @include mobile {
+    text-align: center;
+  }
 }
 
-.footer__right{
-	width: 50%;
-	float: left;
-	text-align: right;
-	font-size: 0;
-	@include mobile{
-		width: 100%;
-		text-align: center;
-		float: none;
-	}
+.footer__right {
+  float: right;
+  width: 50%;
+  text-align: right;
+  font-size: 0;
+  @include mobile {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
 }
 
-.socials{
-	display: inline-block;
-	@extend %clearfix;
+.socials {
+  display: inline-block;
+  padding: 10px 0;
+  @extend %clearfix;
 }
 
-.socials__item{
-	display: inline-block;
-	padding: 10px 0 10px 8px;
-	font-size: 14px;
-	@include mobile{
-		padding: 10px 4px;
-	}
+.socials__item {
+  display: inline-block;
+  padding-right: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover {
+    .socials__link_tg {
+       fill: #1E96C8;
+     }
+    .socials__link_vk {
+      fill: #5181B8;
+    }
+    .socials__link_tw {
+      fill: #52CBFF;
+    }
+  }
+  &:last-child{
+    padding-right: 0;
+  }
 }
 
-.socials__link{
-	width: 30px;
-	height: 30px;
-	display: block;
+.socials__link {
+  display: block;
+  width: 30px;
+  height: 30px;
 }
 
-@each $social in (tw, vk, tg){
-	.socials__link_#{$social}{
-		background: url('../assets/images/icons/#{$social}.png') 0 0 no-repeat;
-		background-size: 30px 30px;
-		@include transition(all .5s);	
-		&:hover{
-			background: url('../assets/images/icons/#{$social}1.png') 0 0 no-repeat;
-			background-size: 30px 30px;
-		}
-	}
+.socials__item-ico {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  fill: $grey;
+  transition: fill .5s;
 }

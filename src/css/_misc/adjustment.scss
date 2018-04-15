@@ -58,7 +58,7 @@ body, html{
 		width: 1000px;
 	}
 	@include laptop{
-		width: 677px;
+		width: 670px;
 	}
 	@include tablet{
 		width: 460px;	
@@ -66,7 +66,6 @@ body, html{
 	@include mobile{
 		width: 300px;
 	}
-	// width: $container-width;
 }
 
 *{
