@@ -28,16 +28,16 @@ body, html{
 }
 
 .wrapper{
-	min-height: 100%;
-	overflow: hidden;
 	position: relative;
+	overflow: hidden;
+	min-height: 100%;
 }
 
 .wrapper:after{
-	content: "";
 	display: block;
-	height: $footer-height;
 	overflow: hidden;
+	height: $footer-height;
+	content: "";
 	@include mobile{
 		height: 100px;
 	}
