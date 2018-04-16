@@ -6,24 +6,7 @@
   }
 }
 
-@mixin box-shadow($box-shadow) {
-  box-shadow: $box-shadow;
-  -webkit-box-shadow: $box-shadow;
-  -moz-box-shadow: $box-shadow;
-}
-
-@mixin transition($transition) {
-  transition: $transition;
-  -webkit-box-shadow: $transition;
-  -moz-box-shadow: $transition;
-}
-
-@mixin inline-block($vert-align: top) {
-  display: inline-block;
-  vertical-align: $vert-align;
-}
-
-//responsive
+//----------------------<<responsive>>----------------------\\
 @function rem($px) {
   @return $px / 16px + 0rem;
 }
@@ -35,13 +18,13 @@
 }
 
 @mixin laptop {
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 990px) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 770px) {
     @content;
   }
 }
