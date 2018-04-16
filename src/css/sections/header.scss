@@ -62,7 +62,7 @@
   background: url('../../assets/images/decor/dot.png') 0 bottom repeat-x;
   background-position-y: rem(40px);
   cursor: pointer;
-  transition: all .5s;
+  transition: all .3s;
   &:hover {
     background: url('../../assets/images/decor/dot-active.png') 0 bottom repeat-x;
     background-position-y: rem(40px);
@@ -97,7 +97,7 @@
   font-size: rem(18px);
   text-decoration: none;
   color: $blue;
-  transition: all .5s;
+  transition: all .3s;
 }
 
 .contacts__link-txt {

@@ -1,173 +1,173 @@
-.career{
-	margin-left: rem(20px);
-	@extend %clearfix;
-	@include fira();
-	@include laptop{
-		margin-left: 0;
-	}
+.career {
+  @extend %clearfix;
+  @include fira();
+  margin-left: rem(20px);
+  @include laptop {
+    margin-left: 0;
+  }
 }
 
-.career__left{
-	width: rem(290px);
-	float: left;
-	@include tablet{
-		width: 100%;
-		text-align: center;
-	}
+.career__left {
+  float: left;
+  width: rem(290px);
+  @include tablet {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-.career__pic{
-	overflow: hidden;
-	display: inline-block;
-	width: rem(220px);
-	height: rem(220px);
-	border-radius: 9px;
+.career__pic {
+  display: inline-block;
+  overflow: hidden;
+  width: rem(220px);
+  height: rem(220px);
+  border-radius: 9px;
 }
 
-.career__pic-img{
-	display: block;
-	max-width: 100%;
-	max-height: 100%;
+.career__pic-img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-
-.career__right{
-	margin-top: rem(65px);
-	width: rem(400px);
-	float: right;
-	@include tablet{
-		width: 100%;
-		margin-top: 20px;
-	}
+.career__right {
+  float: right;
+  width: rem(400px);
+  margin-top: rem(65px);
+  @include tablet {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
-.career__item{
-	text-align: right;
-	margin-bottom: rem(20px);
-	&:first-child{
-		.career__block{
-			&:before{
-				display: none;
-			}
-		}
-	}
-	&:last-child{
-		.career__block{
-			&:after{
-				display: none;
-			}
-		}
-	}
-	@include tablet{
-		text-align: left;
-		margin-left: rem(72px);
-	}
-	@include mobile{
-		margin-left: 0;
-	}
+.career__item {
+  margin-bottom: rem(20px);
+  text-align: right;
+  &:first-child {
+    .career__block {
+      &:before {
+        display: none;
+      }
+    }
+  }
+  &:last-child {
+    .career__block {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  @include tablet {
+    margin-left: rem(72px);
+    text-align: left;
+  }
+  @include mobile {
+    margin-left: 0;
+  }
 }
 
-.career__block{
-	@include box-shadow(0 1px 3px 0 rgba(#000, .2));
-	padding: 15px 20px;
-	width: rem(380px);
-	border-radius: 10px;
-	background-color: rgb(255, 255, 255);
-	display: inline-block;
-	position: relative;
-	text-align: left;
-	@include transition(all .3s);
-	&:before, &:after{
-		content: "";
-		display: block;
-		width: 1px;
-		background: rgba($greytext, 0.2);
-		position: absolute;
-		left: -20px;
-		@include mobile{
-			display: none;
-		}
-	}
-	&:before{
-		top: 0px;
-		bottom: 50%;
-		margin-bottom: 12px;
-	}
-	&:after{
-		top: 50%;
-		bottom: -20px;
-		margin-top: 8px;
-	}
-	&:hover{
-		cursor: pointer;
-		background-color: $blue;
-		.career__title{
-			color: #fff;
-		}
-		.career__occ{
-			color: #fff;
-		}
-		.career__date{
-			color: #fff;
-		}
-		.career__year{
-			color: $blue;
-			@include fira(bold);
-			font-size: 18px;
-			&:after{
-			content: "";
-			width: 10px;
-			height: 10px;
-			background: $blue;
-			border: 5px solid #94e0f2;
-			border-radius: 50%;
-			position: absolute;
-			right: -25px;
-			top: 50%;
-			margin-top: -12px;
-			z-index: 1;
-			}
-		}
-	}
-	@include tablet{
-		width: 100%;
-	}
+.career__block {
+  display: inline-block;
+  position: relative;
+  width: rem(380px);
+  padding: 15px 20px;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 0 rgba(#000, .2);
+  background-color: rgb(255, 255, 255);
+  transition: all .2s;
+  &:before, &:after {
+    display: block;
+    position: absolute;
+    left: -20px;
+    width: 1px;
+    background: rgba($greytext, 0.2);
+    content: "";
+    @include mobile {
+      display: none;
+    }
+  }
+  &:before {
+    top: 0px;
+    bottom: 50%;
+    margin-bottom: 12px;
+  }
+  &:after {
+    top: 50%;
+    bottom: -20px;
+    margin-top: 8px;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $blue;
+    .career__title {
+      color: #fff;
+    }
+    .career__occ {
+      color: #fff;
+    }
+    .career__date {
+      color: #fff;
+    }
+    .career__year {
+      @include fira(bold);
+      color: $blue;
+      &:after {
+        position: absolute;
+        top: 50%;
+        right: -25px;
+        z-index: 1;
+        width: 10px;
+        height: 10px;
+        margin-top: -12px;
+        border: 5px solid #94e0f2;
+        border-radius: 50%;
+        background: $blue;
+        content: "";
+      }
+    }
+  }
+  @include tablet {
+    width: 100%;
+  }
 }
 
-.career__title{
-	color: $greytext;
-	font-size: rem(21px);
+.career__title {
+  font-size: rem(21px);
+  color: $greytext;
+  transition: all .2s;
 }
 
-.career__occ, .career__date{
-	color: $greytext;
-	@include fira(light);
-	font-size: rem(18px);
+.career__occ, .career__date {
+  @include fira(light);
+  font-size: rem(18px);
+  color: $greytext;
+  transition: all .2s;
 }
 
-.career__year{
-	color: $grey;
-	@include fira(light);
-	position: absolute;
-	right: 100%;
-	top: 50%;
-	line-height: 14px;
-	margin-top: -7px;
-	margin-right: 35px;
-	&:after{
-		content: "";
-		width: 10px;
-		height: 10px;
-		background: $blue;
-		border-radius: 50%;
-		position: absolute;
-		right: -20px;
-		top: 50%;
-		margin-top: -7px;
-		z-index: 1;
-	}
-	@include mobile{
-		display: none;
-	}
+.career__year {
+  @include fira(light);
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -7px;
+  margin-right: 35px;
+  line-height: 14px;
+  color: $grey;
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    margin-top: -7px;
+    border-radius: 50%;
+    background: $blue;
+    content: "";
+  }
+  @include mobile {
+    display: none;
+  }
 }
 

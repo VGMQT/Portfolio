@@ -9,6 +9,7 @@
   float: left;
   @include laptop {
     float: none;
+    margin-bottom: 30px;
   }
 }
 
@@ -16,7 +17,6 @@
   width: rem(215px);
   @include laptop {
     width: 100%;
-    margin-bottom: 30px;
     text-align: center;
   }
 }
