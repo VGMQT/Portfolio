@@ -18,10 +18,24 @@
 
 .career__pic {
   display: inline-block;
+  position: relative;
   overflow: hidden;
   width: rem(220px);
   height: rem(220px);
   border-radius: 9px;
+}
+
+.preloader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../../assets/images/career/preloader.gif") center center no-repeat;
+  margin: auto;
+  width: 64px;
+  height: 64px;
+  display: none;
 }
 
 .career__pic-img {
@@ -37,6 +51,40 @@
   @include tablet {
     width: 100%;
     margin-top: 20px;
+  }
+}
+
+.career__list{
+  .active{
+    .career__block{
+      background-color: $blue;
+      .career__title {
+        color: #fff;
+      }
+      .career__occ {
+        color: #fff;
+      }
+      .career__date {
+        color: #fff;
+      }
+      .career__year {
+        @include fira(bold);
+        color: $blue;
+        &:after {
+          position: absolute;
+          top: 50%;
+          right: -25px;
+          z-index: 1;
+          width: 10px;
+          height: 10px;
+          margin-top: -12px;
+          border: 5px solid #94e0f2;
+          border-radius: 50%;
+          background: $blue;
+          content: "";
+        }
+      }
+    }
   }
 }
 
@@ -64,6 +112,12 @@
   @include mobile {
     margin-left: 0;
   }
+}
+
+.block__link{
+  display: block;
+  outline: none;
+  text-decoration: none;
 }
 
 .career__block {
