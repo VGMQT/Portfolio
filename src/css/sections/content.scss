@@ -13,7 +13,7 @@
   }
 }
 
-.nav{
+.nav {
   width: rem(215px);
   @include laptop {
     width: 100%;
@@ -34,7 +34,7 @@
 
 .nav__item_active {
   border-right: rem(5px) solid $blue;
-  .nav__link{
+  .nav__link {
     color: $blue;
   }
   @include laptop {
@@ -146,6 +146,14 @@
     margin-bottom: rem(15px);
     font-size: rem(18px);
     color: $greytext;
+  }
+  li {
+    padding: 0 5px;
+    margin-top: 0;
+    margin-bottom: rem(10px);
+    font-size: rem(16px);
+    color: $greytext;
+    border-left: 2px solid $blue;
   }
   @include laptop {
     overflow: auto;
