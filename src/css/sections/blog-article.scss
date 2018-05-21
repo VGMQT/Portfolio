@@ -1,0 +1,113 @@
+.blog-article{
+  .blog__title{
+    margin-bottom: rem(10px);
+  }
+  .blog__desc{
+    p{
+      margin-top: 0;
+      margin-bottom: rem(20px);
+    }
+    a{
+      text-decoration: none;
+      outline: none;
+      color: $blue;
+      transition: all .2s;
+      &:hover{
+        color: $red;
+      }
+    }
+    ul{
+      margin-bottom: rem(20px);
+    }
+    li {
+      padding: 0 10px;
+      margin-bottom: rem(10px);
+      font-size: rem(16px);
+      border-left: 2px solid $blue;
+      &:first-child{
+        margin-top: rem(10px);
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    h1{
+      @include fira(bold);
+      margin-bottom: rem(10px);
+      font-size: rem(23px);
+      color: $black;
+    }
+    h2{
+      @include fira(bold);
+      margin-bottom: rem(10px);
+      font-size: rem(20px);
+      color: $black;
+    }
+    h3{
+      @include fira(bold);
+      margin-bottom: rem(10px);
+      font-size: rem(18px);
+      color: $black;
+    }
+    b{
+      @include fira(bold);
+    }
+    i{
+      @include fira(light);
+    }
+    blockquote{
+      @include fira(light);
+      position: relative;
+      padding: 0 rem(10px);
+      margin: rem(15px) rem(30px);
+      border-left: 2px solid $red;
+      font-style: italic;
+    }
+    img{
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      margin-bottom: rem(20px);
+      cursor: zoom-in;
+    }
+    .swiper-container{
+      img{
+        margin-bottom: 0;
+      }
+    }
+    small{
+      @include fira(light);
+      display: block;
+      padding: 0 rem(80px);
+      font-size: rem(14px);
+      text-align: center;
+      margin-bottom: rem(20px);
+    }
+    iframe{
+      display: block;
+      margin: auto;
+      margin-bottom: rem(20px);
+    }
+  }
+}
+
+.blog-article__head{
+  margin-bottom: rem(20px);
+}
+
+.blog__subtitle{
+  @include fira();
+  display: flex;
+  font-size: rem(16px);
+  color: $black;
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.article-date{
+  &:before{
+    content: '|';
+    padding: 0 5px;
+  }
+}

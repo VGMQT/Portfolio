@@ -1,0 +1,27 @@
+.lg-outer{
+  cursor: zoom-out;
+}
+
+.lg-toolbar{
+  display: none;
+}
+
+.solo-img{
+  img{
+    cursor: zoom-out;
+  }
+}
+
+.swiper-container {
+  width: 100%;
+  height: rem(390px);
+  margin-bottom: rem(20px);
+  &:hover {
+    .swiper-button-prev, .swiper-button-next {
+      opacity: 1;
+    }
+    .swiper-pagination-bullet, .swiper-pagination-bullet-active{
+      opacity: 1;
+    }
+  }
+}

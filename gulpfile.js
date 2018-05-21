@@ -38,21 +38,21 @@ var config = {
 };
 
 //common tasks
-gulp.task('default', ['clean'], function(){
+gulp.task('default', ['clean', 'uglify-js'], function(){
     gulp.run('dev');
 });
 
-gulp.task('production', ['clean'], function(){
+gulp.task('production', ['clean', 'uglify-js'], function(){
     gulp.run('build');
 });
 
 gulp.task('dev', ['build', 'watch', 'browser-sync']);
 
-gulp.task('build', ['svgSpriteBuild', 'html', 'css', 'js', 'assets']);
+gulp.task('build', ['svgSpriteBuild', 'html', 'css', 'assets']);
 
 gulp.task('watch', function(){
     gulp.watch('src/css/**/*.scss', ['css']);
-    gulp.watch('src/js/**/*.js', ['js']);
+    gulp.watch('src/js/*.js', ['js']);
     gulp.watch('src/*.html', ['html']);
     gulp.watch('src/assets/**/*.*', ['assets']);
     gulp.watch('src/**/*.*').on('change', browserSync.reload);
@@ -89,16 +89,8 @@ gulp.task('html', function(){
         .pipe(wiredep({
             directory: 'bower_components/'
         }))
-        .pipe(gulp.dest('build/'))
-        .on('end', function(){
-            gulp.run('useref');
-        });
-});
-
-gulp.task('useref', function(){
-    return gulp.src('build/*.html')
         .pipe(useref())
-        .pipe(gulp.dest('build/'));
+        .pipe(gulp.dest('build/'))
 });
 
 gulp.task('css', function(){
@@ -111,11 +103,25 @@ gulp.task('css', function(){
         .pipe(gulp.dest('build/css'));
 });
 
+gulp.task('uglify-js', function(){
+    gulp.src('src/js/*.js')
+        .pipe(uglify())
+        .pipe(rename({
+            extname: ".min.js"
+        }))
+        .pipe(gulp.dest('src/js/ugly'))
+});
+
 gulp.task('js', function(){
     gulp.src('src/js/*.js')
         .pipe(uglify())
-        .pipe(rename("main.min.js"))
-        .pipe(gulp.dest('build/js/'));
+        .pipe(rename({
+            extname: ".min.js"
+        }))
+        .pipe(gulp.dest('src/js/ugly'))
+        .on('end', function(){
+            gulp.run('html');
+        });
 });
 
 gulp.task('assets', function(){

@@ -1,0 +1,170 @@
+.blog-page-wrapper{
+  display: flex;
+  justify-content: space-between;
+  .page-content{
+    width: rem(700px);
+  }
+}
+
+.blog{
+  @include fira();
+}
+
+//----------------------<<acco>>----------------------\\
+.blog__acco{
+  margin-bottom: rem(15px);
+  .active{
+    .blog__acco-link{
+      border-color: $red;
+      .blog__acco-title{
+        color: $red;
+      }
+    }
+  }
+}
+
+.blog__acco-link{
+  padding: rem(10px) 0 rem(10px) rem(20px);
+  border-left: rem(5px) solid $blue;
+  cursor: pointer;
+  transition: all .3s;
+  &:hover{
+    border-color: $red;
+    .blog__acco-title{
+      color: $red;
+    }
+  }
+}
+
+.blog__acco-title{
+  @include fira(bold);
+  margin-bottom: 0;
+  font-size: rem(18px);
+  color: $blue;
+  transition: all .3s;
+}
+
+.blog__acco-desc{
+  display: none;
+  margin: 0 0 0 rem(25px);
+  font-size: rem(16px);
+  color: $greytext;
+}
+
+.blog__acco-desc-content{
+  padding-top: rem(10px);
+}
+
+.blog__acco-desc-p{
+  margin-bottom: rem(20px);
+  p{
+    margin-top: 0;
+    margin-bottom: rem(5px);
+    &:last-child{
+      margin: 0;
+    }
+  }
+}
+
+.blog__acco-btn{
+  text-align: right;
+  .btn{
+    font-size: rem(14px);
+  }
+}
+
+//----------------------<<blog>>----------------------\\
+.blog__list{
+  margin-bottom: rem(30px);
+}
+
+.blog__item{
+  border-left: rem(5px) solid $blue;
+  transition: all .3s;
+  &:hover{
+    border-color: $red;
+  }
+}
+
+.blog__link{
+  display: block;
+  padding: rem(5px) rem(20px) rem(10px);
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog__head{
+  margin-bottom: rem(10px);
+}
+
+.blog__title{
+  @include fira(bold);
+  font-size: rem(25px);
+  color: $black;
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.blog__date{
+  @include fira();
+  font-size: rem(16px);
+  color: $black;
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.blog__desc{
+  @include fira();
+  font-size: rem(18px);
+  color: $greytext;
+  @include laptop {
+    overflow: auto;
+    max-height: rem(370px);
+  }
+  @include tablet {
+    max-height: rem(430px);
+  }
+  @include mobile {
+    overflow: hidden;
+    max-height: none;
+  }
+}
+
+.blog__pagination{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination__item{
+  width: rem(30px);
+  height: rem(30px);
+  margin-right: rem(10px);
+  text-align: center;
+  font-size: rem(14px);
+  border-radius: 50%;
+  background: $blue;
+  transition: all .3s;
+  a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    line-height: rem(30px);
+    color: $white;
+  }
+  &:hover{
+    background: $red;
+  }
+  &:active{
+    transform: scale(.95);
+  }
+  &:first-child{
+    margin-right: rem(20px);
+  }
+  &:last-child{
+    margin-right: 0;
+    margin-left: rem(10px);
+  }
+}
