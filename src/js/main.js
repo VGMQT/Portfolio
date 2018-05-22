@@ -7,13 +7,13 @@ $(document).ready(function () {
 
     //----------------------<<slideshow>>----------------------\\
     (function () {
-        $('.block__link').on('click', function (e) {
+        $('.career__link').on('click', function (e) {
             e.preventDefault();
 
             var
                 $this = $(this),
                 container = $this.closest('.career'),
-                display = container.find('.career__pic-img'),
+                display = container.find('#careerIll'),
                 item = $this.closest('.career__item'),
                 path = $this.attr('href'),
                 duration = 500,

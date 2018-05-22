@@ -1,15 +1,10 @@
 .blog-article{
-  .blog__title{
-    margin-bottom: rem(10px);
-  }
+  @include fira();
   .blog__desc{
     p{
-      margin-top: 0;
       margin-bottom: rem(20px);
     }
     a{
-      text-decoration: none;
-      outline: none;
       color: $blue;
       transition: all .2s;
       &:hover{
@@ -66,9 +61,8 @@
     }
     blockquote{
       @include fira(light);
-      position: relative;
       padding: 0 rem(10px);
-      margin: rem(15px) rem(30px);
+      margin: 0 rem(30px) rem(20px);
       border-left: 2px solid $red;
       font-style: italic;
     }
@@ -113,6 +107,9 @@
 
 .blog-article__head{
   margin-bottom: rem(20px);
+  .title{
+    font-size: rem(25px);
+  }
   .blog__subtitle{
     @include laptop{
       justify-content: center;

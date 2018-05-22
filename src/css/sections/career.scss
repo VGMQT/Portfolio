@@ -1,28 +1,36 @@
-.career {
-  @extend %clearfix;
+.career{
   @include fira();
-  margin-left: rem(20px);
-  @include laptop {
-    margin-left: 0;
+  .title{
+    margin-bottom: rem(20px);
+    @include tablet{
+      text-align: center;
+    }
   }
 }
 
-.career__left {
-  float: left;
-  width: rem(290px);
-  @include tablet {
-    width: 100%;
-    text-align: center;
+.career__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include tablet{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .career__pic {
-  display: inline-block;
   position: relative;
   overflow: hidden;
   width: rem(220px);
   height: rem(220px);
-  border-radius: 9px;
+  border-radius: 10px;
+  img{
+    @extend %img;
+  }
+  @include tablet{
+    margin-bottom: rem(20px);
+  }
 }
 
 .preloader{
@@ -31,101 +39,42 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("../assets/images/career/preloader.gif") center center no-repeat;
-  margin: auto;
+  display: none;
   width: 64px;
   height: 64px;
-  display: none;
-}
-
-.career__pic-img {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.career__right {
-  float: right;
-  width: rem(400px);
-  margin-top: rem(65px);
-  @include tablet {
-    width: 100%;
-    margin-top: 20px;
-  }
+  margin: auto;
+  background: url("../assets/img/career/preloader.gif") center center no-repeat;
 }
 
 .career__list{
+  width: rem(380px);
   .active{
-    .career__block{
-      background-color: $blue;
-      .career__title {
-        color: #fff;
-      }
-      .career__occ {
-        color: #fff;
-      }
-      .career__date {
-        color: #fff;
-      }
-      .career__year {
-        @include fira(bold);
-        color: $blue;
-        &:after {
-          position: absolute;
-          top: 50%;
-          right: -25px;
-          z-index: 1;
-          width: 10px;
-          height: 10px;
-          margin-top: -12px;
-          border: 5px solid #94e0f2;
-          border-radius: 50%;
-          background: $blue;
-          content: "";
-        }
+    background-color: $blue;
+    .career__title {
+      color: #FFFFFF;
+    }
+    .career__occ {
+      color: #FFFFFF;
+    }
+    .career__date {
+      color: #FFFFFF;
+    }
+    .career__year {
+      @include fira(bold);
+      color: $blue;
+      &:after {
+        right: -25px;
+        margin-top: -12px;
+        border: 5px solid #94e0f2;
       }
     }
   }
 }
 
 .career__item {
-  margin-bottom: rem(20px);
-  text-align: right;
-  &:first-child {
-    .career__block {
-      &:before {
-        display: none;
-      }
-    }
-  }
-  &:last-child {
-    .career__block {
-      &:after {
-        display: none;
-      }
-    }
-  }
-  @include tablet {
-    margin-left: rem(72px);
-    text-align: left;
-  }
-  @include mobile {
-    margin-left: 0;
-  }
-}
-
-.block__link{
-  display: block;
-  outline: none;
-  text-decoration: none;
-}
-
-.career__block {
-  display: inline-block;
   position: relative;
-  width: rem(380px);
   padding: 15px 20px;
-  text-align: left;
+  margin-bottom: rem(20px);
   border-radius: 10px;
   box-shadow: 0 1px 3px 0 rgba(#000, .2);
   background-color: rgb(255, 255, 255);
@@ -151,39 +100,43 @@
     bottom: -20px;
     margin-top: 8px;
   }
+  &:first-child {
+    &:before {
+      display: none;
+    }
+  }
+  &:last-child {
+    margin-bottom: 0;
+    &:after {
+      display: none;
+    }
+  }
   &:hover {
     cursor: pointer;
     background-color: $blue;
     .career__title {
-      color: #fff;
+      color: #FFFFFF;
     }
     .career__occ {
-      color: #fff;
+      color: #FFFFFF;
     }
     .career__date {
-      color: #fff;
+      color: #FFFFFF;
     }
     .career__year {
       @include fira(bold);
       color: $blue;
       &:after {
-        position: absolute;
-        top: 50%;
         right: -25px;
-        z-index: 1;
-        width: 10px;
-        height: 10px;
         margin-top: -12px;
         border: 5px solid #94e0f2;
-        border-radius: 50%;
-        background: $blue;
-        content: "";
       }
     }
   }
-  @include tablet {
-    width: 100%;
-  }
+}
+
+.career__link{
+  display: block;
 }
 
 .career__title {
@@ -208,11 +161,12 @@
   margin-right: 35px;
   line-height: 14px;
   color: $grey;
+  transition: all .2s;
   &:after {
     position: absolute;
+    z-index: 1;
     top: 50%;
     right: -20px;
-    z-index: 1;
     width: 10px;
     height: 10px;
     margin-top: -7px;
