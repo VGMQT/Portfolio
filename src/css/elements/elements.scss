@@ -1,0 +1,14 @@
+.btn {
+  @include fira(bold);
+  display: inline-block;
+  padding: rem(8px) rem(15px);
+  border: rem(2px) solid #FFFFFF;
+  border-radius: 25px;
+  font-size: rem(14px);
+  color: #FFFFFF;
+  transition: all .2s;
+  &:hover {
+    background-color: #FFFFFF;
+    color: $blue;
+  }
+}

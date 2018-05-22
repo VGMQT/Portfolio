@@ -24,7 +24,7 @@
       border-color: $red;
       .blog__acco-title{
         color: $red;
-        background: url('../assets/images/decor/dot-active.png') 0 bottom repeat-x;
+        background: url('../assets/img/decor/dot-active.png') 0 bottom repeat-x;
         background-position-y: rem(22px);
       }
     }
@@ -39,7 +39,7 @@
     border-color: $red;
     .blog__acco-title{
       color: $red;
-      background: url('../assets/images/decor/dot-active.png') 0 bottom repeat-x;
+      background: url('../assets/img/decor/dot-active.png') 0 bottom repeat-x;
       background-position-y: rem(22px);
     }
   }
@@ -55,7 +55,7 @@
   font-size: rem(18px);
   color: $blue;
   transition: all .3s;
-  background: url('../assets/images/decor/dot.png') 0 bottom repeat-x;
+  background: url('../assets/img/decor/dot.png') 0 bottom repeat-x;
   background-position-y: rem(22px);
 }
 
@@ -83,7 +83,12 @@
 .blog__acco-btn{
   text-align: right;
   .btn{
-    font-size: rem(14px);
+    border-color: $red;
+    color: $red;
+    &:hover {
+      background-color: $red;
+      color: $white;
+    }
   }
   @include mobile{
     text-align: center;

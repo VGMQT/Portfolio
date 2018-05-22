@@ -1,3 +1,4 @@
+//----------------------<<float>>----------------------\\
 %clearfix {
   &:after {
     content: "";
@@ -35,9 +36,17 @@
   }
 }
 
+//----------------------<<retina>>----------------------\\
 @mixin retina {
   @media screen and (-webkit-min-device-pixel-ratio: 1.5),
   screen and (min-resolution: 144dpi) {
     @content;
   }
+}
+
+//----------------------<<images>>----------------------\\
+%img{
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }

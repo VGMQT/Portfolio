@@ -15,20 +15,23 @@ $blue: #33c1e3;
 @import "fontawesome/fa-solid";
 @import "fontawesome/fa-brands";
 
+//elements
+@import "elements/elements";
+
 //plugins
 @import "plugins/lightgallery";
 @import "plugins/lg-fb-comment-box";
 @import "plugins/lg-transitions";
 @import "plugins/swiper";
 
-//plugins resets
-@import "_misc/resets";
+//plugins custom settings
+@import "plugins/custom";
 
 //styles
 @import "sections/header";
 @import "sections/footer";
 @import "sections/content";
-@import "sections/hello";
+@import "sections/index";
 @import "sections/career";
 @import "sections/portfolio";
 @import "sections/blog";

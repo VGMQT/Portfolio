@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+include includes/head
+<body>
+<div class="wrapper">
+    <div class="main-content">
+        include includes/header
+        <div class="content">
+            <div class="container">
+                include includes/sidebar
+                <main class="page-content">
+                    <div class="portfolio">
+                        <div class="title-portfolio">
+                            <h1 class="title">Портфолио</h1>
+                        </div>
+                        <ul class="portfolio__blocklist">
+                            <li class="portfolio__item">
+                                <a href="" class="portfolio__link">
+                                    <div class="portfolio__link_shadow">
+                                        <div class="portfolio__pic">
+                                            <img class="portfolio__pic-img" src="assets/img/portfolio/hipsweet.jpg" alt="Hipsweet">
+                                        </div>
+                                        <div class="portfolio__text">
+                                            <div class="portfolio__title">Hipsweet</div>
+                                            <div class="portfolio__desc">Продажа кондитерских изделий</div>
+                                            <div class="portfolio__type">
+                                                <span class="portfolio__type-ico">
+                                                    <i class="fas fa-desktop"></i>
+                                                </span>
+                                                <span class="portfolio__type-text">Лендинг</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+include includes/footer
+<!-- build:js js/vendor.js -->
+<!-- bower:js -->
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:js js/main.min.js -->
+<script src="js/ugly/main.min.js"></script>
+<!-- endbuild -->
+</body>
+</html>

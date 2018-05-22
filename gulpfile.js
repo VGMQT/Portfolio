@@ -1,35 +1,38 @@
-//gulp
+//----------------------<<gulp>>----------------------\\
 var gulp = require('gulp');
 var clean = require('gulp-clean');
 var rename = require('gulp-rename');
 var replace = require('gulp-replace');
 var cheerio = require('gulp-cheerio');
 
-//bower
+//----------------------<<bower>>----------------------\\
 var wiredep = require('gulp-wiredep');
 
-//html scripts
+//----------------------<<html scripts>>----------------------\\
 var useref = require('gulp-useref');
 
-//sass=css
+//----------------------<<pug = html>>----------------------\\
+var pug = require('gulp-pug');
+
+//----------------------<<sass = css>>----------------------\\
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 
-//js
+//----------------------<<js>>----------------------\\
 var uglify = require('gulp-uglify');
 
-//dev
+//----------------------<<dev>>----------------------\\
 var browserSync = require('browser-sync').create();
 
-//svg
+//----------------------<<svg>>----------------------\\
 var svgSprite = require('gulp-svg-sprite');
 var svgmin = require('gulp-svgmin');
 
-//personal
-var config = {
+//----------------------<<personal>>----------------------\\
+var svgspriteDest = {
     mode: {
         symbol: {
             sprite: "../socials-sprite.svg"
@@ -37,7 +40,7 @@ var config = {
     }
 };
 
-//common tasks
+//----------------------<<common tasks>>----------------------\\
 gulp.task('default', ['clean', 'uglify-js'], function(){
     gulp.run('dev');
 });
@@ -48,11 +51,12 @@ gulp.task('production', ['clean', 'uglify-js'], function(){
 
 gulp.task('dev', ['build', 'watch', 'browser-sync']);
 
-gulp.task('build', ['svgSpriteBuild', 'html', 'css', 'assets']);
+gulp.task('build', ['svgSpriteBuild', 'pug', 'css', 'assets']);
 
 gulp.task('watch', function(){
     gulp.watch('src/css/**/*.scss', ['css']);
     gulp.watch('src/js/*.js', ['js']);
+    gulp.watch('src/**/*.pug', ['pug']);
     gulp.watch('src/*.html', ['html']);
     gulp.watch('src/assets/**/*.*', ['assets']);
     gulp.watch('src/**/*.*').on('change', browserSync.reload);
@@ -63,9 +67,9 @@ gulp.task('clean', function(){
         .pipe(clean());
 });
 
-//engine tasks
+//----------------------<<engine tasks>>----------------------\\
 gulp.task('svgSpriteBuild', function() {
-    return gulp.src('src/assets/images/socials/*.svg')
+    return gulp.src('src/assets/img/svg/*.svg')
         .pipe(svgmin({
             js2svg: {
                 pretty: true
@@ -80,8 +84,20 @@ gulp.task('svgSpriteBuild', function() {
             parserOptions: { xmlMode: true }
         }))
         .pipe(replace('&gt;', '>'))
-        .pipe(svgSprite(config))
-        .pipe(gulp.dest('src/assets/images/socials/sprite/'));
+        .pipe(svgSprite(svgspriteDest))
+        .pipe(gulp.dest('src/assets/img/svg/sprite/'));
+});
+
+gulp.task('pug', function(){
+    return gulp.src('src/*.pug')
+        .pipe(pug({
+            pretty: true
+        }))
+        .pipe(wiredep({
+            directory: 'bower_components/'
+        }))
+        .pipe(useref())
+        .pipe(gulp.dest('build/'))
 });
 
 gulp.task('html', function(){

@@ -7,16 +7,15 @@
   @include fira(bold);
 }
 
-.header__left, .header__right {
+.user, .header__right {
   float: left;
   width: 50%;
   height: rem(70px);
   padding-top: rem(10px);
 }
 
-.user {
-  display: inline-block;
-  text-decoration: none;
+.user__link {
+  display: flex;
   color: $black;
   &:hover {
     color: $blue;
@@ -59,12 +58,12 @@
   display: inline-block;
   position: relative;
   padding: rem(18px) 0;
-  background: url('../assets/images/decor/dot.png') 0 bottom repeat-x;
+  background: url('../assets/img/decor/dot.png') 0 bottom repeat-x;
   background-position-y: rem(40px);
   cursor: pointer;
   transition: all .3s;
   &:hover {
-    background: url('../assets/images/decor/dot-active.png') 0 bottom repeat-x;
+    background: url('../assets/img/decor/dot-active.png') 0 bottom repeat-x;
     background-position-y: rem(40px);
     .contacts__link {
       color: $red;

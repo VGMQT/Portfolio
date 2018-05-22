@@ -20,24 +20,23 @@
   }
 }
 
+.nav__list{
+  .active{
+    border-color: $blue;
+    .nav__link {
+      color: $blue;
+    }
+  }
+}
+
 .nav__item {
   padding: rem(10px) rem(20px);
-  border-right: 5px solid transparent;
+  border-right: rem(5px) solid transparent;
   @include laptop {
     display: inline-block;
     padding: rem(10px);
     border: none;
     vertical-align: middle;
-  }
-}
-
-.nav__item_active {
-  border-right: rem(5px) solid $blue;
-  .nav__link {
-    color: $blue;
-  }
-  @include laptop {
-    border: none;
   }
 }
 
@@ -167,24 +166,3 @@
   }
 }
 
-.about__btn {
-  text-align: right;
-  @include mobile {
-    text-align: center;
-  }
-}
-
-.btn {
-  @include fira(bold);
-  display: inline-block;
-  padding: rem(8px) rem(15px);
-  border: rem(2px) solid $red;
-  border-radius: rem(25px);
-  text-decoration: none;
-  color: $red;
-  transition: all .2s;
-  &:hover {
-    background-color: $red;
-    color: $white;
-  }
-}
