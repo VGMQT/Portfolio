@@ -9,7 +9,6 @@
   float: left;
   @include laptop {
     float: none;
-    margin-bottom: 30px;
   }
 }
 

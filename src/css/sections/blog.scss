@@ -4,6 +4,12 @@
   .page-content{
     width: rem(700px);
   }
+  @include laptop{
+    flex-direction: column;
+    .page-content{
+      width: 100%;
+    }
+  }
 }
 
 .blog{
@@ -12,41 +18,49 @@
 
 //----------------------<<acco>>----------------------\\
 .blog__acco{
-  margin-bottom: rem(15px);
+  margin-bottom: rem(10px);
   .active{
     .blog__acco-link{
       border-color: $red;
       .blog__acco-title{
         color: $red;
+        background: url('../assets/images/decor/dot-active.png') 0 bottom repeat-x;
+        background-position-y: rem(22px);
       }
     }
   }
 }
 
 .blog__acco-link{
-  padding: rem(10px) 0 rem(10px) rem(20px);
-  border-left: rem(5px) solid $blue;
+  padding: rem(10px) 0 rem(10px);
   cursor: pointer;
   transition: all .3s;
   &:hover{
     border-color: $red;
     .blog__acco-title{
       color: $red;
+      background: url('../assets/images/decor/dot-active.png') 0 bottom repeat-x;
+      background-position-y: rem(22px);
     }
+  }
+  @include mobile{
+    text-align: center;
   }
 }
 
 .blog__acco-title{
   @include fira(bold);
+  display: inline-block;
   margin-bottom: 0;
   font-size: rem(18px);
   color: $blue;
   transition: all .3s;
+  background: url('../assets/images/decor/dot.png') 0 bottom repeat-x;
+  background-position-y: rem(22px);
 }
 
 .blog__acco-desc{
   display: none;
-  margin: 0 0 0 rem(25px);
   font-size: rem(16px);
   color: $greytext;
 }
@@ -71,6 +85,9 @@
   .btn{
     font-size: rem(14px);
   }
+  @include mobile{
+    text-align: center;
+  }
 }
 
 //----------------------<<blog>>----------------------\\
@@ -79,18 +96,24 @@
 }
 
 .blog__item{
-  border-left: rem(5px) solid $blue;
+  margin-bottom: rem(20px);
   transition: all .3s;
-  &:hover{
-    border-color: $red;
+  &:last-child{
+    margin-bottom: 0;
   }
 }
 
 .blog__link{
   display: block;
-  padding: rem(5px) rem(20px) rem(10px);
   text-decoration: none;
   color: inherit;
+  &:hover{
+    .blog__head{
+      .blog__title{
+        color: $red;
+      }
+    }
+  }
 }
 
 .blog__head{
@@ -101,17 +124,26 @@
   @include fira(bold);
   font-size: rem(25px);
   color: $black;
-  @include mobile {
+  transition: all .3s;
+  @include mobile{
     text-align: center;
   }
 }
 
-.blog__date{
+.blog__subtitle{
   @include fira();
+  display: flex;
   font-size: rem(16px);
-  color: $black;
-  @include mobile {
-    text-align: center;
+  color: $grey;
+  @include mobile{
+    justify-content: center;
+  }
+}
+
+.article-date{
+  &:before{
+    content: '|';
+    padding: 0 5px;
   }
 }
 
@@ -119,17 +151,6 @@
   @include fira();
   font-size: rem(18px);
   color: $greytext;
-  @include laptop {
-    overflow: auto;
-    max-height: rem(370px);
-  }
-  @include tablet {
-    max-height: rem(430px);
-  }
-  @include mobile {
-    overflow: hidden;
-    max-height: none;
-  }
 }
 
 .blog__pagination{

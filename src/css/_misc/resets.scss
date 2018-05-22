@@ -24,4 +24,10 @@
       opacity: 1;
     }
   }
+  @include tablet{
+    height: rem(300px);
+  }
+  @include mobile{
+    height: rem(230px);
+  }
 }

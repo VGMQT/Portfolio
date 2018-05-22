@@ -36,18 +36,27 @@
       margin-bottom: rem(10px);
       font-size: rem(23px);
       color: $black;
+      @include laptop{
+        text-align: center;
+      }
     }
     h2{
       @include fira(bold);
       margin-bottom: rem(10px);
       font-size: rem(20px);
       color: $black;
+      @include laptop{
+        text-align: center;
+      }
     }
     h3{
       @include fira(bold);
       margin-bottom: rem(10px);
       font-size: rem(18px);
       color: $black;
+      @include laptop{
+        text-align: center;
+      }
     }
     b{
       @include fira(bold);
@@ -82,32 +91,35 @@
       font-size: rem(14px);
       text-align: center;
       margin-bottom: rem(20px);
+      @include tablet{
+        padding: 0;
+      }
     }
     iframe{
       display: block;
+      width: 100%;
+      height: rem(390px);
       margin: auto;
       margin-bottom: rem(20px);
+      @include tablet{
+        height: rem(300px);
+      }
+      @include mobile{
+        height: rem(230px);
+      }
     }
   }
 }
 
 .blog-article__head{
   margin-bottom: rem(20px);
-}
-
-.blog__subtitle{
-  @include fira();
-  display: flex;
-  font-size: rem(16px);
-  color: $black;
-  @include mobile {
+  .blog__subtitle{
+    @include laptop{
+      justify-content: center;
+    }
+  }
+  @include laptop {
     text-align: center;
   }
 }
 
-.article-date{
-  &:before{
-    content: '|';
-    padding: 0 5px;
-  }
-}
