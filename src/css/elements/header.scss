@@ -1,70 +1,56 @@
 .header {
-  @extend %clearfix;
   height: rem(80px);
   margin-bottom: rem(25px);
-  background: #fff;
   box-shadow: 0 1px 3px 0 rgba(#000, .2);
-  @include fira(bold);
-}
-
-.user, .header__right {
-  float: left;
-  width: 50%;
-  height: rem(70px);
-  padding-top: rem(10px);
+  background: #FFFFFF;
+  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
 }
 
 .user__link {
   display: flex;
+  align-items: center;
   color: $black;
+  transition: all .3s;
   &:hover {
     color: $blue;
   }
 }
 
 .user__pic {
-  display: inline-block;
+  overflow: hidden;
   width: rem(60px);
   height: rem(60px);
-  overflow: hidden;
-  vertical-align: middle;
+  margin-right: rem(20px);
   border: rem(1px) solid #fff;
   border-radius: 50%;
-}
-
-.user__pic-avatar {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.user__username {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: rem(18px);
-  margin-left: rem(18px);
-  @include fira(regular);
-  @include mobile {
-    padding-top: 5px;
-    width: rem(70px);
+  img{
+    @extend %img;
   }
 }
 
-.header__right {
-  text-align: right;
+.user__username {
+  @include fira(regular);
+  font-size: rem(18px);
+  @include mobile {
+    max-width: 120px;
+  }
 }
 
 .contacts {
-  display: inline-block;
+  @include fira(bold);
   position: relative;
-  padding: rem(18px) 0;
   background: url('../assets/img/decor/dot.png') 0 bottom repeat-x;
-  background-position-y: rem(40px);
+  background-position-y: rem(22px);
   cursor: pointer;
   transition: all .3s;
   &:hover {
     background: url('../assets/img/decor/dot-active.png') 0 bottom repeat-x;
-    background-position-y: rem(40px);
+    background-position-y: rem(22px);
     .contacts__link {
       color: $red;
     }
@@ -77,7 +63,6 @@
     }
   }
   @include mobile {
-    padding: 5px 0;
     background: none;
     &:hover {
       background: none;
@@ -94,7 +79,6 @@
 .contacts__link {
   display: block;
   font-size: rem(18px);
-  text-decoration: none;
   color: $blue;
   transition: all .3s;
 }
@@ -110,36 +94,37 @@
   width: 32px;
   height: 32px;
   fill: $blue;
-  transition: fill .5s;
+  transition: fill .3s;
 }
 
 //----------------------<<dropdown>>----------------------\\
 .contacts__dropdown {
   position: absolute;
-  top: 100%;
+  top: 175%;
   left: -9999px;
   z-index: 100;
   opacity: 0;
+  max-width: 260px;
   margin-left: -140%;
   text-align: center;
-  background-color: #fff;
   border: 1px solid #dedede;
   border-radius: 10px;
-  transition: opacity .5s;
+  background-color: #FFFFFF;
+  transition: opacity .3s;
   &:before {
-    display: block;
     position: absolute;
     top: -50px;
     right: 0;
     left: 0;
+    display: block;
     height: 60px;
     content: "";
   }
   @include tablet {
-    margin-left: -160%;
+    margin-left: -145%;
   }
   @include mobile {
-    top: 120%;
+    top: 140%;
     margin-left: -75%;
   }
 }
@@ -151,25 +136,22 @@
   &:last-child {
     border-bottom: 0;
   }
-  i {
-    padding-right: rem(10px);
-    color: $blue;
-  }
-  .fa-phone {
-    padding-right: 0;
-    padding-left: rem(10px);
-  }
 }
 
 .contacts__dropdown-link {
+  @include fira(light);
+  display: flex;
+  align-items: baseline;
   font-size: rem(18px);
-  text-decoration: none;
-  white-space: nowrap;
   color: $black;
+  transition: all .3s;
   &:hover {
     color: $blue;
   }
-  @include fira(light);
+  i {
+    margin-right: rem(10px);
+    color: $blue;
+  }
 }
 
 .triangle {
@@ -183,16 +165,16 @@
   border-top: 0;
   border-bottom-color: #dedede;
   @include tablet {
-    margin-left: rem(50px);
+    margin-left: rem(35px);
   }
   @include mobile {
     margin-left: rem(70px);
   }
   &:after {
-    display: block;
     position: absolute;
     top: 1px;
     left: rem(-15px);
+    display: block;
     border: rem(15px) solid transparent;
     border-top: 0;
     border-bottom-color: #fff;

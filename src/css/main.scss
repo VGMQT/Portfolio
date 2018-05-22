@@ -17,6 +17,9 @@ $blue: #33c1e3;
 
 //elements
 @import "elements/elements";
+@import "elements/header";
+@import "elements/footer";
+@import "elements/sidebar";
 
 //plugins
 @import "plugins/lightgallery";
@@ -28,9 +31,6 @@ $blue: #33c1e3;
 @import "plugins/custom";
 
 //styles
-@import "sections/header";
-@import "sections/footer";
-@import "sections/content";
 @import "sections/index";
 @import "sections/career";
 @import "sections/portfolio";

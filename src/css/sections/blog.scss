@@ -1,33 +1,21 @@
-.blog-page-wrapper{
-  display: flex;
-  justify-content: space-between;
-  .page-content{
-    width: rem(700px);
-  }
-  @include laptop{
-    flex-direction: column;
-    .page-content{
-      width: 100%;
-    }
-  }
-}
-
 .blog{
   @include fira();
 }
 
 //----------------------<<acco>>----------------------\\
 .blog__acco{
-  margin-bottom: rem(10px);
+  margin-bottom: rem(5px);
   .active{
     .blog__acco-link{
-      border-color: $red;
-      .blog__acco-title{
+      .title{
         color: $red;
         background: url('../assets/img/decor/dot-active.png') 0 bottom repeat-x;
         background-position-y: rem(22px);
       }
     }
+  }
+  @include laptop{
+    margin-bottom: rem(20px);
   }
 }
 
@@ -36,27 +24,25 @@
   cursor: pointer;
   transition: all .3s;
   &:hover{
-    border-color: $red;
-    .blog__acco-title{
+    .title{
       color: $red;
       background: url('../assets/img/decor/dot-active.png') 0 bottom repeat-x;
       background-position-y: rem(22px);
     }
   }
+  .title{
+    display: inline-block;
+    font-size: rem(18px);
+    color: $blue;
+    background: url('../assets/img/decor/dot.png') 0 bottom repeat-x;
+    background-position-y: rem(22px);
+  }
+  @include laptop{
+    padding: 0;
+  }
   @include mobile{
     text-align: center;
   }
-}
-
-.blog__acco-title{
-  @include fira(bold);
-  display: inline-block;
-  margin-bottom: 0;
-  font-size: rem(18px);
-  color: $blue;
-  transition: all .3s;
-  background: url('../assets/img/decor/dot.png') 0 bottom repeat-x;
-  background-position-y: rem(22px);
 }
 
 .blog__acco-desc{
@@ -110,11 +96,10 @@
 
 .blog__link{
   display: block;
-  text-decoration: none;
   color: inherit;
   &:hover{
     .blog__head{
-      .blog__title{
+      .title{
         color: $red;
       }
     }
@@ -123,15 +108,8 @@
 
 .blog__head{
   margin-bottom: rem(10px);
-}
-
-.blog__title{
-  @include fira(bold);
-  font-size: rem(25px);
-  color: $black;
-  transition: all .3s;
-  @include mobile{
-    text-align: center;
+  .title{
+    font-size: rem(25px);
   }
 }
 
@@ -176,7 +154,6 @@
     display: block;
     height: 100%;
     width: 100%;
-    text-decoration: none;
     line-height: rem(30px);
     color: $white;
   }

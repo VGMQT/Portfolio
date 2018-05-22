@@ -1,0 +1,56 @@
+.sidebar {
+  width: 220px;
+  @include laptop{
+    width: 100%;
+    margin-bottom: rem(20px);
+  }
+}
+
+.nav__list{
+  @include laptop{
+    display: flex;
+    justify-content: center;
+  }
+  .active{
+    border-color: $blue;
+    .nav__link {
+      color: $blue;
+    }
+  }
+}
+
+.nav__item {
+  @include fira(bold);
+  padding: 10px 20px;
+  text-align: right;
+  font-size: rem(18px);
+  border-right: 5px solid transparent;
+  transition: all .2s;
+  @include laptop {
+    padding: 0;
+    margin-right: rem(30px);
+    border: none;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  &:hover {
+    @include fira();
+  }
+  &:active {
+    @include fira(bold);
+    border-color: $blue;
+  }
+}
+
+.nav__link {
+  display: block;
+  color: $black;
+  transition: all .2s;
+  &:hover {
+    color: $blue;
+  }
+  &:active {
+    color: $blue;
+  }
+}
